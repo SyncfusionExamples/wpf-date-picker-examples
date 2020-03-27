@@ -1,0 +1,51 @@
+﻿<Window x:Class="SfDateSelector_ItemCustomization.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SfDateSelector_ItemCustomization"
+        xmlns:syncfusion="http://schemas.syncfusion.com/wpf"  Title="DropDown customization"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen" Width="600" Height="700">
+    <Window.DataContext>
+        <local:ViewModel></local:ViewModel>
+    </Window.DataContext>
+
+    <Grid x:Name="LayoutRoot" Background="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <Border Margin="0"  Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"></RowDefinition>
+                    <RowDefinition Height="2*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <syncfusion:SfDatePicker ShowDropDownButton="{Binding ShowDropDownButton,Mode=TwoWay}" 
+                                         IsDropDownOpen="{Binding IsDropDownOpen, Mode=TwoWay}"
+                                         Grid.Row="1" 
+                                         x:Name="datePicker" Margin="20"
+                                         VerticalAlignment="Top"                                         
+                                         HorizontalAlignment="Center"
+                                         Width="200">
+                </syncfusion:SfDatePicker>
+            </Grid>
+        </Border>
+
+        <GroupBox Margin="20" VerticalAlignment="Center" HorizontalAlignment="Center" FontWeight="Bold" FontSize="14" FontFamily="Segoe UI" Grid.Column="1" BorderBrush="Silver" Header="User Options">
+            <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                    <RowDefinition Height="Auto"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <CheckBox IsChecked="{Binding ShowDropDownButton,Mode=TwoWay}" Content="ShowDropDownButton" FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="0" Margin="3" Name="ShowDropDownButton"  >                    
+                </CheckBox>
+
+                <CheckBox IsChecked="{Binding IsDropDownOpen, Mode=TwoWay}" Content="IsDropDownOpen"  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Grid.Row="1"  Margin="3" Name="IsDropDownOpen"  >                  
+                </CheckBox>
+            </Grid>
+        </GroupBox>
+    </Grid>
+</Window>
