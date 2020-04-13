@@ -27,15 +27,16 @@
                         <ColumnDefinition></ColumnDefinition>
                         <ColumnDefinition></ColumnDefinition>
                     </Grid.ColumnDefinitions>
-                    <TextBlock  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Text ="Selected Date : "  Grid.Row="0"  Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="26"/>
-                    <TextBlock x:Name="selectedtext" FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Text ="{Binding SelectedDate, Mode=TwoWay}"  Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Center" VerticalAlignment="Center" Width="200" Height="26"/>
+                    <TextBlock  FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Text ="Selected Date : "  Grid.Row="0"  Grid.Column="0" TextAlignment="Right"  HorizontalAlignment="Right" VerticalAlignment="Center" Width="200" Height="26"/>
+                    <TextBlock x:Name="selectedtext" FontWeight="Normal" FontFamily="Segoe UI" FontSize="13" Text ="{Binding SelectedDate, Mode=TwoWay}"  Grid.Row="0"  Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Height="26"/>
 
 
 
                 </Grid>
               
                 <syncfusion:SfDatePicker MinDate="1/1/2020"
-                                         MaxDate="6/30/2020" 
+                                         MaxDate="6/30/2020"                                          
+                                         Value="{Binding SelectedDate, Mode=TwoWay}"
                                          AllowNull="True" 
                                          SetValueOnLostFocus="{Binding SetValueOnLostFocus, Mode=TwoWay}"
                                          Grid.Row="1" 
@@ -43,12 +44,6 @@
                                          VerticalAlignment="Top"                                         
                                          HorizontalAlignment="Center"
                                          Width="200">
-                    <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="ValueChanged">
-                            <i:InvokeCommandAction Command="{Binding SelectionChangedCommand}"
-                                                   CommandParameter="{Binding ElementName=datePicker}"/>
-                        </i:EventTrigger>
-                    </i:Interaction.Triggers>
                 </syncfusion:SfDatePicker>
             </Grid>
         </Border>
