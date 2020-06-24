@@ -12,7 +12,7 @@ namespace SfDatePicker_Value_setting
     class ViewModel : NotificationObject
     {
         private bool setValueOnLostFocus = false;
-        private object selectedDate;
+        private DateTime? selectedDate;
 
         public bool SetValueOnLostFocus
         {
@@ -26,7 +26,7 @@ namespace SfDatePicker_Value_setting
                 this.RaisePropertyChanged("SetValueOnLostFocus");
             }
         }
-        public object SelectedDate
+        public DateTime? SelectedDate
         {
             get
             {
