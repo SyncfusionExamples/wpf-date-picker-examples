@@ -8,7 +8,7 @@
         mc:Ignorable="d" WindowStartupLocation="CenterScreen"
         xmlns:syncfusionskin ="clr-namespace:Syncfusion.SfSkinManager;assembly=Syncfusion.SfSkinManager.WPF" 
         xmlns:syncfusion="http://schemas.syncfusion.com/wpf"
-        Title="TimePicker - Appearance" Height="650" Width="600">
+        Title="DatePicker - Appearance" Height="650" Width="600">
     <Window.DataContext>
         <local:ViewModel/>
     </Window.DataContext>
@@ -19,7 +19,7 @@
         </Grid.ColumnDefinitions>
 
         <Grid>
-            <syncfusion:SfTimePicker Name="sfTimePicker"
+            <syncfusion:SfDatePicker Name="sfDatePicker"
                                      VerticalAlignment="Center"
                                      HorizontalAlignment="Center"
                                      Width="200"/>
